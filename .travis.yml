@@ -16,7 +16,9 @@ before_install:
 #  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" $DOCKER_REGISTRY
 
 script: 
-  - sudo echo 'DOCKER_OPTS="--insecure-registry $DOCKER_REGISTRY"' >> /etc/default/docker
+#  - sudo echo 'DOCKER_OPTS="--insecure-registry $DOCKER_REGISTRY"' >> /etc/default/docker
+  - service docker stop
+  - service docker start --insecure-registry $DOCKER_REGISTRY
   - docker tag $DOCKER_NAME $DOCKER_REGISTRY/$DOCKER_NAME
   - docker push $DOCKER_REGISTRY/$DOCKER_NAME
 
