@@ -16,6 +16,7 @@ before_install:
 #  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" 62.210.107.5:5000
 
 script: 
+  - echo 'DOCKER_OPTS="--insecure-registry $DOCKER_REGISTRY"' >> /etc/default/docker
   - docker tag $DOCKER_NAME $DOCKER_REGISTRY/$DOCKER_NAME
   - docker push $DOCKER_REGISTRY/$DOCKER_NAME
 
