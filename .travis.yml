@@ -15,6 +15,7 @@ before_install:
   - docker ps -a
 
 script: 
+  - echo "$DOCKER_EMAIL $DOCKER_USERNAME $DOCKER_PASSWORD"
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" $DOCKER_REGISTRY
   - docker tag $DOCKER_NAME $DOCKER_REGISTRY/$DOCKER_NAME
   - docker push $DOCKER_REGISTRY/$DOCKER_NAME
