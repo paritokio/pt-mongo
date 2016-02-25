@@ -13,10 +13,9 @@ before_install:
   - docker build -t $DOCKER_NAME .
   - docker run --name $DOCKER_NAME -d mongo
   - docker ps -a
-#  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" $DOCKER_REGISTRY
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" $DOCKER_REGISTRY
 
 script: 
-#  - sudo echo 'DOCKER_OPTS="--insecure-registry $DOCKER_REGISTRY"' >> /etc/default/docker
   - docker tag $DOCKER_NAME $DOCKER_REGISTRY/$DOCKER_NAME
   - docker push $DOCKER_REGISTRY/$DOCKER_NAME
 
