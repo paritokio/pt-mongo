@@ -1,4 +1,3 @@
-# pt-mongo
-Dockerfile for mongo service
+# Docker Mongo
 
-test
+Build a mongo docker
