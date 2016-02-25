@@ -3,7 +3,7 @@ sudo: required
 language: ruby
 
 services:
-  - docker --insecure-registry $DOCKER_REGISTRY
+  - docker
 
 env:
   DOCKER_NAME: paritokio-mongo
