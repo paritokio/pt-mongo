@@ -6,7 +6,7 @@ services:
   - docker
 
 env:
-  DOCKER_NAME: paritokio-mongo
+  DOCKER_NAME: pt-mongo
   DOCKER_REGISTRY: registry.paritokio.com:5000
 
 before_install:
